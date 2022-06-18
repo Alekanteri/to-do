@@ -10,7 +10,6 @@ input {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   display: grid;
   place-items: center;
@@ -20,7 +19,7 @@ input {
 
 .input-lable {
   position: relative;
-  width: 50vw;
+  width: 40vw;
   height: 2rem;
   border-radius: .5rem;
   background-color: #e3e3e3;
@@ -29,6 +28,14 @@ input {
 
 .todo-body {
   background-color: #fff;
+}
+
+.to-do-title {
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .note {
@@ -46,18 +53,38 @@ input {
 .note-content {
   margin: 15% auto;
   background-color: #fff;
-  max-width: 60%;
+  max-width: 50%;
   padding: 2rem;
   position: relative;
   border-radius: 1rem;
-  height: 50%;
+  min-height: 50%;
+}
+
+.note-head .input-content { 
+  width: 50%;
+}
+
+.note-body {
+  border-radius: 0.5rem;
+  border: 2px solid #000;
+  margin: 5rem 0;
+  padding: 1rem;
+}
+
+.note-body .input-content {
+  margin: 1rem;
+}
+
+.input-content {
+  border-bottom: 1px solid #000;
+  font-size: 1.5rem;
 }
 
 .close-btn {
   position: absolute;
   right: .5rem;
   top: .1rem;
-  font-size: 2rem;
+  font-size: 3rem;
   color: #000;
   cursor: pointer;
 }

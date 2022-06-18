@@ -2,6 +2,10 @@ import "./style.css";
 
 const body: HTMLElement = document.getElementById("app")!;
 
+const ToDoTitle = document.createElement("h1")
+ToDoTitle.classList.add("to-do-title")
+ToDoTitle.textContent = "ToDo"
+
 const inputLable: HTMLElement = document.createElement("div");
 inputLable.classList.add("input-lable");
 inputLable.setAttribute("contentEditable", "false");
@@ -19,12 +23,11 @@ closeBtn.classList.add("close-btn");
 
 const noteTitle: HTMLElement = document.createElement("div");
 noteTitle.classList.add("note-head");
-noteTitle.innerHTML = "<input type='text' />";
-
+noteTitle.innerHTML = "<h2>Title</h2><div class='input-content' contentEditable='true'></div>";
 
 const noteBody: HTMLElement = document.createElement("div");
 noteBody.classList.add("note-body");
-noteBody.innerHTML = "<input type='text' />";
+noteBody.innerHTML = "<div id='body-input' class='input-content' contentEditable='true'></div>";
 
 note.append(noteContent);
 noteContent.append(noteTitle, noteBody, closeBtn);
@@ -41,4 +44,13 @@ window.addEventListener("click", (e) => {
   e.target === note ? note.style.display = "none" : null;
 })
 
-body.append(inputLable, note);
+const bodyInput = document.getElementById("body-input");
+bodyInput?.addEventListener("keydown", (e) => {
+  let tab = e.keyCode;
+  if (tab === 13) {
+    console.log("agdafg")
+    noteBody.innerHTML += "<div id='body-input' class='input-content' contentEditable='true'></div>";
+  }
+})
+
+body.append(ToDoTitle, inputLable, note);
